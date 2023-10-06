@@ -10,7 +10,7 @@ namespace Workspace
 		{
             int result;
             Console.WriteLine("> Choose a language\n- Type \"ro\" or \"en\"");
-            string lang = Console.ReadLine();
+            string lang = Console.ReadLine()?.ToLower();
             if (lang == "ro") {
                 Console.WriteLine("Introdu numerele: ");
                 string[] input = Console.ReadLine().Split(" ");
@@ -26,7 +26,11 @@ namespace Workspace
                     } else if (op == '*') {
                         Console.WriteLine($"> Rezultat:  {input1 * input2}");
                     }  else if (op == '/') {
+                        if (input2 != 0) {
                         Console.WriteLine($"> Rezultat:  {input1 / input2}");
+                        } else {
+                            Console.Write("EROARE: Nu poti imparti cu 0.");
+                        }
                     } else {
                         Console.WriteLine("EROARE: Operator invalid!");
                         return;
@@ -46,13 +50,17 @@ namespace Workspace
                     } else if (op == '*') {
                         Console.WriteLine($"> Result:  {input1 * input2}");
                     }  else if (op == '/') {
-                        Console.WriteLine($"> Result:  {input1 / input2}");
+                        if (input2 != 0) {
+                        Console.WriteLine($"> Rezultat:  {input1 / input2}");
+                        } else {
+                            Console.Write("EROARE: Cannot divide by 0.");
+                        }
                     } else {
-                        Console.WriteLine("EROARE: Invalid operator!");
+                        Console.WriteLine("ERROR: Invalid operator!");
                         return;
                     }
             } else {
-                Console.Write("Invalid language! // Limba invalida!");
+                Console.Write("ERROR: \n[EN] Invalid language!\n[RO] Limba invalida!");
             }
 
             

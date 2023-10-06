@@ -1,6 +1,4 @@
 using System;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Workspace
 {
@@ -8,7 +6,6 @@ namespace Workspace
 	{
 		static void Main(string[] args)
 		{
-            int result;
             Console.WriteLine("> Choose a language\n- Type \"ro\" or \"en\"");
             string lang = Console.ReadLine()?.ToLower();
             if (lang == "ro") {
